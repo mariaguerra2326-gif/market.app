@@ -12,7 +12,7 @@ create table users(
              status boolean not null default true,
 created_at timestamptz not null default now(),
 updated_at timestamptz not null default now(),
-deleted_at timestamptz not null 
+deleted_at timestamptz null 
 );
 --insert into table user 
 insert into users (
