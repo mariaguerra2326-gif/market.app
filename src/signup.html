@@ -7,22 +7,25 @@
         <link rel="icon" type="imagen/png" href="src/icons/market_main.png" /> 
     </head>
     <body>
-        <center><h1>Register</h1></center>
+        <center><h1>Register</h1></center><br>
+        <form name="register-from" action="signup.php" method="post">
         <table border="0" align="center">
             <tr><td><label>Firstname:</label></td></tr>
-            <tr><td><input type="text" placeholder="Username or email"><br></label></td></tr>
+            <tr><td><input type="text" name="fnama" placeholder="Username or email" required><br></label></td></tr>
             <tr><td><label>Lastname:</label></td></tr>
-            <tr><td><input type="text"><br></label></td></tr>
+            <tr><td><input type="text" name="lnama" required><br></label></td></tr>
             <tr><td><label>Mobil number:</label></td></tr>
-            <tr><td><input type="text"><br></label></td></tr>
+            <tr><td><input type="text" name="mnumber" required><br></label></td></tr>
             <tr><td><label>Identification number:</label></td></tr>
-            <tr><td><input type="text"><br></label></td></tr>
+            <tr><td><input type="text" name="idnumber" required><br></label></td></tr>
             <tr><td><label>Email:</label></td></tr>
-            <tr><td><input type="email"><br></label></td></tr>
+            <tr><td><input type="email" name="email" required><br></label></td></tr>
             <tr><td><label>Password:</label></td></tr>
-            <tr><td><input type="password"><br></label></td></tr>
+            <tr><td><input type="password" name="passwd" required><br></label></td></tr>
             <tr><td align="center"><button>Register</button></label></td>
             <tr><td align="center"><label>you forgot your password</label></td></tr>
         </table>
+        <!--<imput type="submint" value="register">-->
+        </form>
     </body>
 </html>
