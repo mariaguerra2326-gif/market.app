@@ -8,16 +8,16 @@
     $ide_number=$_POST['idnumber'];
     $e_mail=$_POST['email'];
     $p_wd=$_POST['passwd'];
-
-    $enc_pass= password_hash($p_wd,PASSWORD_DEFAULT);
+    //$enc_pass= password_hash($p_wd,PASSWORD_DEFAULT);
+    $enc_pass= md5($p_wd);
     //validar si el usuario existe
     $check_email="
-    selec
-    u.email
+    select
+      u.email
     from
-    users u
+      users u
     where
-    email='$e_mail' or ide_number='$ide_number'
+     email='$e_mail' or ide_number='$ide_number'
     limit 1
     ";
     $res_check = pg_query($conn,$check_email);
@@ -41,8 +41,7 @@
             '$ide_number',
             '$e_mail',
             '$enc_pass'
-              )
-            ";
+            )";
   //Step 4. execute query
             $res=pg_query($conn,$query);
   //Step 5. create query to insert into
