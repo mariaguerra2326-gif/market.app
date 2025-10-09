@@ -20,7 +20,7 @@
      email='$e_mail' or ide_number='$ide_number'
     limit 1
     ";
-    $res_check = pg_query($conn,$check_email);
+    $res_check = pg_query($conn_supa,$check_email);
     if(pg_num_rows($res_check)>0){
       echo "<script>alert('user already exists!!')</script>";+
     header ('refresh:0;url=signup.html');
@@ -43,7 +43,7 @@
             '$enc_pass'
             )";
   //Step 4. execute query
-            $res=pg_query($conn,$query);
+            $res=pg_query($conn_supa,$query);
   //Step 5. create query to insert into
   if($res){
       //echo"user has been created successfully !!!";
