@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar País</title>
+    <link rel="icon" type="imagen/png" href="src/icons/region.png" />
+</head>
+<body>
+  <br>
+  <center><img src="icons/region.png" width="10%"</center>
+    <form name="login form" action="regions.php" method="post">
+      
+  <h2>Register Country</h2>
+  <form action="regions.php" method="POST">
+    <label>name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Abreviatura:</label>
+    <input type="text" name="abbr" maxlength="5" required><br><br>
+
+    <label>Code:</label>
+    <input type="text" name="code" maxlength="10" required><br><br>
+
+            
+            <label for="country_id">Seleccione el país:</label>
+            <select name="country_id" id="country_id" required>
+                <option value="">Seleccione un país</option>
+                <option value="1">Colombia</option>
+                <option value="2">Ecuador</option>
+                <option value="3">Perú</option>
+            </select>
+
+          <br><br> <button type="submit">Guardar Región</button>
+
+        </form>
+</body>
+</html>
