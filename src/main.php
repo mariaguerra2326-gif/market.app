@@ -1,5 +1,8 @@
 <?php
-echo "welcome to main !!!";
+session_start();
+if(isset($_session['session_user_id'])){
+   header('refresh:0;url=error_403.html');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +13,8 @@ echo "welcome to main !!!";
     <title>Market.app - home</title>
 </head>
 <body>
-    
+    <center><b>user: </b> here print your name</h6></center>
+ <a href="list_users.php"> list all users</a> |
+ <a href="logout,php"> logout</a>   
 </body>
 </html>

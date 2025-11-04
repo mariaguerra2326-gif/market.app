@@ -1,6 +1,10 @@
 <?php
  //Step 1. get database connection
  require('../config/database.php');
+ session_start();
+ if(isset($_session['session_user_id'])){
+   header('refresh:0;url=main.php');
+ }
  ?>
 
 <!DOCTYPE html>
