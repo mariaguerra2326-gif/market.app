@@ -2,7 +2,7 @@
  //Step 1. get database connection
  require('../config/database.php');
  session_start();
- if(isset($_session['session_user_id'])){
+ if(isset($_SESSION['session_user_id'])){
    header('refresh:0;url=main.php');
  }
  //Step 2. get from-data
@@ -26,9 +26,10 @@
     limit 1
     ";
   $res_check = pg_query($conn_local,$sql_check_user);
-  $row = pg_fetch_assoc($res_check)
-  $_session['session_user_id']= $row['id'];
-  $_session['session_user_fullname']= $row['fullname'];
+
+  $row = pg_fetch_assoc($res_check);
+  $_SESSION['session_user_id']= $row['id'];
+  $_SESSION['session_user_fullname']= $row['fullname'];
 
   if(pg_num_rows($res_check)>0){
       //echo "user exists. go to main page!!!";
