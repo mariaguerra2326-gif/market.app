@@ -8,6 +8,7 @@
     $ide_number=trim($_POST['idnumber']);
     $e_mail=trim($_POST['email']);
     $p_wd=trim($_POST['passwd']);
+    $url_photo= "photos/user_default.png";
     //$enc_pass= password_hash($p_wd,PASSWORD_DEFAULT);
     $enc_pass= md5($p_wd);
     //validar si el usuario existe
@@ -33,14 +34,16 @@
             mobile_number,
             ide_number,
             email,
-            password
+            password,
+            url_photo
             )VALUES(
             '$f_name',
             '$l_name',
             '$m_number',
             '$ide_number',
             '$e_mail',
-            '$enc_pass'
+            '$enc_pass',
+            '$url_photo'
             )";
   //Step 4. execute query
             $res=pg_query($conn_supa,$query);

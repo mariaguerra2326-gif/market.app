@@ -1,10 +1,12 @@
 <?php
  //Step 1. get database connection
  require('../config/database.php');
+ /*
  session_start();
  if(!isset($_session['session_user_id'])){
    header('refresh:0;url=error_403.html');
  }
+   */
  ?>
 
 <!DOCTYPE html>
@@ -25,6 +27,7 @@
         <th>ide. number</th>
         <th>phone number</th>
         <th>status</th>
+        <th>photo</th>
         <th>options</th>
     </tr>
     <?php
@@ -36,7 +39,8 @@
         u.mobile_number,
         case 
           when u.status= true then 'active' else 'inactive'
-        end as status
+        end as status,
+        u.url_photo
         from 
            users u";
     $result = pg_query($conn_local, $sql_users);
@@ -50,6 +54,7 @@
         <td>" . $row ['ide_number']."</td>
         <td>" . $row ['mobile_number']."</td>
         <td>" . $row['status']."</td>
+        <td align= 'center' ><img src=". $row['url_photo']." width='30'</td>
         <td>
 
             <a href = '#'><img src='icons/lupa.png' width='20'></a> 
