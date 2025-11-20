@@ -23,7 +23,7 @@
     <title>Document</title>
 </head>
 <body>
-    <center><form name="edit-user-form" action = "update_user.php" method = "post">   
+    <center><form name="edit_user_form" action = "update_user.php" method = "post">   
         <input 
             type="hidden"
             name="iduser" 
